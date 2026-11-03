@@ -48,7 +48,7 @@ def overlay(base: list[Entry], top: list[Entry]) -> list[Entry]:
     timeline = []
     for a, b in zip(points, points[1:]):
         user = _user_at(top, a) or _user_at(base, a)
-        if user is not None:  # neither layer has anyone on call here
+        if user is not None:  # someone is on call here
             timeline.append(Entry(user, a, b))
     return timeline
 
